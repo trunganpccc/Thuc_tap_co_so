@@ -16,3 +16,11 @@ def login():
     if 'username' in session:
         return redirect(url_for('home'))
     return render_template('login.html')
+# Đăng xuất
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('login'))
+
+if __name__ == '__main__':
+    app.run(debug = True ,port=5001)
