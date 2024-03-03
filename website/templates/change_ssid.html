@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Thay đổi SSID Wi-Fi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 20px;
+    }
+
+    .card {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      font-weight: bold;
+    }
+
+    .form-control {
+      width: 100%;
+    }
+
+    .btn-primary {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div class="container-fluid bg-primary text-white p-5 text-center">
+  <h1>THAY ĐỔI THÔNG TIN WIFI</h1>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="card">
+    <div class="card-title">Thay đổi SSID Wi-Fi</div>
+    <form action="{{ url_for('change_wifi_ssid', wifi_ip=wifi_ip) }}" method="POST">
+      <div class="form-group">
+        <label for="new_ssid" class="form-label">SSID mới:</label>
+        <input type="text" class="form-control" id="new_ssid" placeholder="Nhập SSID mới" name="new_ssid" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Lưu</button>
+      
+    </form>
+    <a class="btn btn-secondary" href="/wifi/{{ wifi_ip }}">Thoát</a>
+  </div>
+</div>
+</body>
+</html>

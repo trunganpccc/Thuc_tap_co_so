@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xoá Wi-Fi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .confirm-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+      color: #fff;
+    }
+
+    .btn-danger:hover {
+      background-color: #c82333;
+    }
+
+    .btn-secondary {
+      background-color: #6c757d;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background-color: #5a6268;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Xác nhận xoá Wi-Fi</h1>
+    <p>Bạn có chắc chắn muốn xoá Wi-Fi có địa chỉ IP: {{ wifi_ip }}?</p>
+    <div class="confirm-btns">
+      <form method="post" action="/wifi/{{ wifi_ip }}/delete">
+        <button type="submit" class="btn btn-danger">Xoá</button>
+      </form>
+      <a href="/home" class="btn btn-secondary">Hủy</a>
+    </div>
+  </div>
+</body>
+</html>

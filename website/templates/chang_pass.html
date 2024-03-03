@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Thay đổi SSID Wi-Fi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 20px;
+    }
+
+    .card {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      font-weight: bold;
+    }
+
+    .form-control {
+      width: 100%;
+    }
+
+    .btn-primary {
+      width: 100%;
+    }
+
+    .btn-secondary {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid bg-primary text-white p-5 text-center">
+    <h1>THAY ĐỔI THÔNG TIN WIFI</h1>
+  </div>
+  <br>
+  <br>
+  <div class="container">
+    <div class="card">
+      <div class="card-title">Thay đổi mật khẩu Wi-Fi</div>
+      <form action="{{ url_for('change_wifi_pass', wifi_ip=wifi_ip) }}" method="POST">
+        <div class="form-group">
+          <label for="security_type" class="form-label">Loại bảo mật:</label>
+          <select class="form-control" id="security_type" name="security_type" required>
+            <option value="wifi_pass">Wi-Fi có mật khẩu</option>
+            <option value="wifi_free">Wi-Fi không có mật khẩu</option>
+          </select>
+        </div>
+        <div class="form-group" id="password_form_group">
+          <label for="new_password" class="form-label">Mật khẩu mới:</label>
+          <input type="password" class="form-control" id="new_password" placeholder="Nhập mật khẩu mới" name="new_password" required>
+        </div>
+        <div class="d-flex">
+          <button type="submit" class="btn btn-primary mr-2">Lưu</button>
+          <a class="btn btn-danger" href="/wifi/delete_password/{{ wifi_ip }}">Xóa</a>
+        </div>
+        <a class="btn btn-secondary" href="/wifi/{{ wifi_ip }}">Thoát</a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
