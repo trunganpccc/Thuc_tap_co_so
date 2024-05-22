@@ -311,7 +311,6 @@ def delete_wifi_and_class(wifi_ip):
 def delete(wifi_ip):
     # Trả về trang delete.html và truyền thông tin wifi_ip cho trang đó
     return render_template('delete.html', wifi_ip=wifi_ip)
-
 # Đăng xuất
 @app.route('/logout')
 def logout():
