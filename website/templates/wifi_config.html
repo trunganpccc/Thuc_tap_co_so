@@ -62,7 +62,7 @@
       <form action="{{ url_for('add_wifi') }}" method="POST">
         <div class="form-group">
           <label for="name_class" class="form-label">Tên phòng học:</label>
-          <input type="text" class="form-control" id="name_class" placeholder="Nhập tên phòng học" name="name_class" required>
+          <input type="text" class="form-control" id="name_class" placeholder="Nhập tên phòng học (Viết hoa và có thể chứa chữ số)" name="name_class" required pattern="[A-Z0-9\s]+" title="Tên phòng học phải được viết hoa và có thể chứa cả chữ số">
         </div>
         <div class="form-group">
           <label for="ssid" class="form-label">SSID Wi-Fi:</label>
