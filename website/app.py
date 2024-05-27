@@ -166,7 +166,7 @@ def change_wifi_pass(wifi_ip):
             return render_template('wifi_detail.html', wifi_details=wifi_details, wifi_ip=wifi_ip)
         else:
             return "wifi not found"
-    return render_template('change_pass.html', wifi_ip=wifi_ip)# yêu cầu không là post thì trả về form thay đổi mật khẩu 
+    return render_template('chang_pass.html', wifi_ip=wifi_ip)# yêu cầu không là post thì trả về form thay đổi mật khẩu 
 
 def get_wifi_change_pass(wifi_ip):
     query = """
